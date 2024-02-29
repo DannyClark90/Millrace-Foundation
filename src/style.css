@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.navbar {
+  background-color: green;
+  width: 100vw;
+  height: 10vh;
+  color: black;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */
