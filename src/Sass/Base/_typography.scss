@@ -5,3 +5,39 @@ body {
     color: #777;
     padding: 30px;
 }
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: 22rem;
+    right: 10rem;
+
+    &--main{     
+        color: $color-white;
+        display: block;
+        font-size: 6rem;
+        font-weight: 800;
+        letter-spacing: 1rem;
+    
+        animation-name: moveInLeft;
+        animation-duration: 2s;
+    }
+    
+    &--sub{
+        position: absolute;
+        top: 8rem;
+        color: $color-white;
+        display: block;
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: 1.5rem;
+    
+        animation-name: moveInRight;
+        animation-duration: 2s;
+    }
+}
