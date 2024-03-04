@@ -1,9 +1,12 @@
+@import '../Abstracts/variables';
+
 body {
     font-family: "Lexend", sans-serif;
     font-weight: 400;
+    font-size: 1.8rem;
     line-height: 1.7;
-    color: #777;
-    padding: 30px;
+    color: $color-heading;
+    
 }
 
 .heading-primary{
@@ -20,7 +23,7 @@ body {
     &--main{     
         color: $color-white;
         display: block;
-        font-size: 6rem;
+        font-size: $heading-primary-main;
         font-weight: 800;
         letter-spacing: 1rem;
     
@@ -30,10 +33,10 @@ body {
     
     &--sub{
         position: absolute;
-        top: 8rem;
+        top: 8.5rem;
         color: $color-white;
         display: block;
-        font-size: 3rem;
+        font-size: $heading-primary-sub;
         font-weight: 700;
         letter-spacing: 1.5rem;
     
@@ -45,4 +48,11 @@ body {
 .navbar-heading{
     color: $color-white;
     font-weight: 800;
+}
+
+.section-heading{
+    color: $color-heading;
+    font-size: $default-heading;
+    font-weight: 800;
+    font-style: normal;
 }
