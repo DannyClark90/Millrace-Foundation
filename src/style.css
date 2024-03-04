@@ -58,16 +58,49 @@ body {
   animation-duration: 2s;
 }
 
+.navbar-heading {
+  color: #fff;
+  font-weight: 800;
+}
+
 .navbar {
   background-image: linear-gradient(to bottom, #6d8972 85%, rgba(109, 137, 114, 0.2));
   position: relative;
   width: 100vw;
   height: 12vh;
-  color: black;
-  padding: 2rem;
+  padding: 3rem;
   z-index: 10;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.navbar__logo {
+  height: 7rem;
+  width: 7rem;
+  margin-right: 1rem;
+}
+.navbar__title-and-logo {
+  display: flex;
+  align-items: center;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
+}
+.top-nav__item {
+  padding: 3rem;
+}
+.top-nav__link:link, .top-nav__link:visited {
+  font-family: "Lexend", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #fff;
+}
+.top-nav__link:hover {
+  text-decoration: underline;
 }
 
 @keyframes rotate-center {
