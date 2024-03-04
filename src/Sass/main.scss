@@ -1,9 +1,12 @@
 @import './Abstracts/variables';
 @import './Base/base';
 @import './Base/typography';
+@import './Base/utilities';
 
 @import './Pages/home';
 
-@import './Components/navbar';
-@import './Components/header';
+@import './Layout/navbar';
+@import './Layout/header';
+
 @import './Components/mission';
+@import './Components/button';

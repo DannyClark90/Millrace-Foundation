@@ -1,0 +1,27 @@
+@import '../Abstracts/variables';
+@import '../Base/animation';
+
+.mission-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100rem;
+    padding: 3rem 10rem;
+    background-color: $color-beige-light;
+    font-size: $default-font-size;
+    
+    position: absolute;
+    right: 20rem;
+    margin-top: -100px;
+    clip-path: polygon(5% 0%,100% 0%, 95% 100%, 0% 100%);
+
+    animation-name: slide-up;
+    animation-duration: 2s;
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+    }
+}
