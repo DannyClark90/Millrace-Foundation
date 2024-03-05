@@ -1,14 +1,11 @@
 @import "../Abstracts/mixins";
+:root{
+    font-size: 62.5%; // 1rem = 10px
+    box-sizing: border-box;
+    padding-bottom: 10rem;
+    display: flex;
+    position: relative;
 
-*,
-*::before,
-*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-html{
     font-size: 62.5%; // 1rem = 10px
     box-sizing: border-box;
     padding-bottom: 10rem;
@@ -22,11 +19,11 @@ html{
     }
     
     @include respond(tab-land){
-        font-size: 60%;
+        font-size: 45%;
     }
 
     @include respond(tab-port){
-        font-size: 50%;
+        font-size: 40%;
     }
 
     @include respond(phone){
@@ -37,5 +34,12 @@ html{
     display: flex;
     flex-direction: column;
     align-content: flex-start;
+}
 
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }

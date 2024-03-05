@@ -8,12 +8,11 @@ export default function Mission() {
   return (
     <>
       <section className="mission">
-        <img
-          className="logo"
-          src="src/assets/Millrace Outline mod.png"
-          alt="Millrace spinning logo"
-        />
-
+      <img
+        className="logo"
+        src="src/assets/Millrace Outline mod.png"
+        alt="Millrace spinning logo"
+      />
         <article className="mission__card">
           <h2 className="section-heading margin-bottom">Our Mission</h2>
           <p className="mission__card-paragraph margin-bottom">

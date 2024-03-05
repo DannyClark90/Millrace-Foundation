@@ -12,6 +12,11 @@ export default function Header() {
           <span className="heading-primary--sub">Action On Mental Health</span>
         </h1>
       </header>
+      {/* <img
+        className="logo"
+        src="src/assets/Millrace Outline mod.png"
+        alt="Millrace spinning logo"
+      /> */}
     </>
   );
 }
