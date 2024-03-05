@@ -1,3 +1,37 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 *,
 *::before,
 *::after {
@@ -10,13 +44,35 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   padding-bottom: 10rem;
-}
-
-body {
   font-family: "Lexend", sans-serif;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
+}
+@media (max-width: 120em) {
+  html {
+    font-size: 56%;
+  }
+}
+@media (max-width: 90em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 80em) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (max-width: 60em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 37.5em) {
+  html {
+    font-size: 30%;
+  }
 }
 
 body {
@@ -31,12 +87,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: absolute;
-  top: 22rem;
-  right: 10rem;
+  text-align: center;
 }
 .heading-primary--main {
   color: #fff;
@@ -48,13 +99,12 @@ body {
   animation-duration: 2s;
 }
 .heading-primary--sub {
-  position: absolute;
-  top: 8.5rem;
   color: #fff;
   display: block;
   font-size: 3.7rem;
   font-weight: 700;
   letter-spacing: 1.5rem;
+  margin-top: 2rem;
   animation-name: moveInRight;
   animation-duration: 2s;
 }
@@ -62,6 +112,7 @@ body {
 .navbar-heading {
   color: #fff;
   font-weight: 800;
+  font-size: 3.7rem;
 }
 
 .section-heading {
@@ -75,15 +126,33 @@ body {
   margin-bottom: 2rem;
 }
 
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 .navbar {
   background-image: linear-gradient(to bottom, #6d8972 85%, rgba(109, 137, 114, 0.2));
   position: sticky;
   top: 0;
   width: 100vw;
   height: 12vh;
-  padding: 3rem;
+  padding: 1rem 3rem;
   z-index: 10;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -103,6 +172,11 @@ body {
   list-style: none;
   text-decoration: none;
 }
+@media (max-width: 80em) {
+  .top-nav {
+    display: none;
+  }
+}
 .top-nav__item {
   padding: 3rem;
 }
@@ -111,80 +185,37 @@ body {
   font-size: 2.5rem;
   font-weight: 400;
   color: #fff;
+  text-decoration: none;
 }
 .top-nav__link:hover {
   text-decoration: underline;
 }
 
-@keyframes rotate-center {
-  0% {
-    opacity: 0;
-    transform: rotate(0);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(360deg);
-  }
-}
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes slide-up {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.header {
+.mobile-nav {
   display: flex;
-  width: 100vw;
-  height: 70vh;
-  margin-top: -1.7vh;
-  z-index: 1;
-}
-.header__bg-img {
-  display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   align-items: center;
-  position: relative;
-  height: 100%;
   width: 100%;
-  background-image: linear-gradient(to bottom, rgba(109, 137, 114, 0.8), rgba(175, 200, 173, 0.7)), url("../../assets/Header-Background.png");
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+  height: fit-content;
+  background-color: #6D8972;
+  list-style: none;
+  text-decoration: none;
 }
-.header__logo {
-  position: absolute;
-  left: 9rem;
-  height: 41rem;
-  width: 41rem;
-  align-self: flex-end;
-  z-index: 2;
-  margin-bottom: -16rem;
-  animation-name: rotate-center, move-in-right;
-  animation-duration: 2s;
+
+.burger-menu {
+  color: #fff;
+  height: 6rem;
+  width: 6rem;
+}
+@media (max-width: 134em) {
+  .burger-menu {
+    display: none;
+  }
+}
+@media (max-width: 80em) {
+  .burger-menu {
+    display: inline-block;
+  }
 }
 
 @keyframes rotate-center {
@@ -227,7 +258,92 @@ body {
     transform: translateY(0);
   }
 }
-.mission-card {
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 65vh;
+  margin-top: -1.7vh;
+  padding: 0, 30rem;
+  background-image: linear-gradient(to bottom, rgba(109, 137, 114, 0.8), rgba(175, 200, 173, 0.7)), url("../../assets/Header-Background.png");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+}
+@media (max-width: 90em) {
+  .header {
+    padding: 0 3rem;
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.mission {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  padding: 0 15rem;
+  bottom: 10rem;
+  width: 100%;
+}
+.mission__card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -237,16 +353,22 @@ body {
   background-color: #F2F1EB;
   font-size: 2.6rem;
   position: absolute;
-  right: 20rem;
-  margin-top: -100px;
   clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
   animation-name: slide-up;
   animation-duration: 2s;
 }
-.mission-card__buttons {
+.mission__card-buttons {
   display: flex;
   justify-content: space-between;
   width: 60%;
+}
+
+.logo {
+  position: absolute;
+  display: block;
+  height: 50%;
+  animation-name: rotate-center, move-in-right;
+  animation-duration: 2s;
 }
 
 @keyframes rotate-center {
@@ -294,8 +416,9 @@ body {
   color: #fff;
   font-size: 2.6rem;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 20px;
   border-style: none;
+  cursor: pointer;
 }
 .button:link, .button:visited {
   text-decoration: none;

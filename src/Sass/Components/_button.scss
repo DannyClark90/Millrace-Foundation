@@ -6,8 +6,9 @@
   color: $color-white;
   font-size: $default-font-size;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 20px;
   border-style: none;
+  cursor: pointer;
 
   &:link,
   &:visited {
