@@ -125,6 +125,12 @@ body {
   font-style: normal;
 }
 
+.footer-heading {
+  color: #fff;
+  font-weight: 800;
+  font-size: 3.7rem;
+}
+
 .margin-bottom {
   margin-bottom: 2rem;
 }
@@ -480,32 +486,75 @@ ORDER: Base + typography > general layout + grid > page layout > components
     transform: rotateX(-360deg);
   }
 }
-/*
-0 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
-
-$breakpoint arguement choices:
-- phone
-- tab-port
-- tab-land
-- big-desktop
-
-ORDER: Base + typography > general layout + grid > page layout > components
-
-1em = 16px
-*/
 .footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12rem 3rem 3rem 3rem;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 18rem 3rem 3rem 3rem;
   width: 100vw;
   height: 60vh;
   background-image: linear-gradient(to top, #6d8972 70%, rgba(109, 137, 114, 0.8));
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+}
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  font-size: 2.6rem;
+  color: #fff;
+}
+.footer__section--icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+}
+.footer__section--support-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+.footer__section--contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 20%;
+  font-size: 2.6rem;
+  color: #fff;
+}
+
+.icon {
+  height: 8rem;
+  width: 8rem;
+  padding: 1rem;
+  color: #fff;
+}
+.icon:link, .icon:visited {
+  text-decoration: none;
+  font-size: 2.6rem;
+  border-style: none;
+  color: #fff;
+}
+.icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-style: none;
+  color: #fff;
+}
+.icon:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.icon:active, .icon:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
 
 @keyframes rotate-center {
@@ -588,7 +637,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   position: relative;
   padding: 0 15rem;
   width: 100vw;
-  height: 35rem;
+  height: 30rem;
 }
 @media (max-width: 134em) {
   .mission {
@@ -598,6 +647,12 @@ ORDER: Base + typography > general layout + grid > page layout > components
 @media (max-width: 80em) {
   .mission {
     bottom: 12rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .mission {
+    bottom: 12rem;
+    height: 49rem;
   }
 }
 .mission__card {
@@ -705,30 +760,66 @@ ORDER: Base + typography > general layout + grid > page layout > components
     transform: rotateX(-360deg);
   }
 }
-.button {
+.button-green {
   background-color: #6D8972;
   color: #fff;
   font-size: 2.6rem;
+  font-weight: 600;
+  padding: 2rem;
+  border-radius: 20px;
+  border-style: none;
+  cursor: pointer;
+  width: fit-content;
+}
+.button-green:link, .button-green:visited {
+  text-decoration: none;
+  font-size: 2.6rem;
+  border-style: none;
+}
+.button-green:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-style: none;
+}
+.button-green:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.button-green:active, .button-green:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.button-green--white {
+  background-color: #fff;
+  color: #6D8972;
+}
+
+.button-white {
+  background-color: #fff;
+  color: #6D8972;
+  font-size: 2.6rem;
+  font-weight: 600;
   padding: 2rem;
   border-radius: 20px;
   border-style: none;
   cursor: pointer;
 }
-.button:link, .button:visited {
+.button-white:link, .button-white:visited {
   text-decoration: none;
   font-size: 2.6rem;
   border-style: none;
 }
-.button:hover {
+.button-white:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   border-style: none;
 }
-.button:hover::after {
+.button-white:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
-.button:active, .button:focus {
+.button-white:active, .button-white:focus {
   outline: none;
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);

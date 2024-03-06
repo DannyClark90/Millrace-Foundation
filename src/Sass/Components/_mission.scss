@@ -9,7 +9,7 @@
   position: relative;
   padding: 0 15rem;
   width: 100vw;
-  height: 35rem;
+  height: 30rem;
 
   @include respond(xl-desktop){
     bottom: 8rem;
@@ -17,6 +17,11 @@
 
 @include respond(tab-land){
     bottom: 12rem;
+}
+
+@include respond(phone){
+  bottom: 12rem;
+  height:49rem;
 }
 
   &__card {

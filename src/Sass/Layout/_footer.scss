@@ -1,17 +1,88 @@
 @import "../Abstracts/variables";
 @import "../Base/animation";
-@import "../Abstracts/mixins";
 
 .footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 18rem 3rem 3rem 3rem;
+  width: 100vw;
+  height: 60vh;
+
+  background-image: linear-gradient(
+    to top,
+    rgba($color-primary-dark, 1) 70%,
+    rgba($color-primary-dark, 0.8)
+  );
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+
+  &__section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 12rem 3rem 3rem 3rem;
-    width: 100vw;
-    height: 60vh;
+    width: 20%;
+    font-size: $default-font-size;
+    color: $color-white;
 
-    background-image: linear-gradient(to top,
-        rgba($color-primary-dark, 1) 70%,
-        rgba($color-primary-dark, 0.8));
-    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+    &--icon-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 80%;
+    }
+
+    &--support-us {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 20%;
+    }
+
+    &--contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 20%;
+        font-size: $default-font-size;
+        color: $color-white;
+      }
+  }
+}
+
+.icon {
+  height: 8rem;
+  width: 8rem;
+  padding: 1rem;
+  color: $color-white;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+    font-size: $default-font-size;
+    border-style: none;
+    color: $color-white;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    border-style: none;
+    color: $color-white;
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    color: $color-white;
+  }
 }

@@ -23,10 +23,10 @@ export default function Mission() {
           </p>
           <div className="mission__card-buttons">
             <Link to="#">
-              <Button label={"About Us"} />
+              <Button label={"About Us"} color={"green"} />
             </Link>
             <Link to="#">
-              <Button label={"What We Do"} />
+              <Button label={"What We Do"} color={"green"} />
             </Link>
           </div>
         </article>
