@@ -1,0 +1,17 @@
+@import "../Abstracts/variables";
+@import "../Base/animation";
+@import "../Abstracts/mixins";
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12rem 3rem 3rem 3rem;
+    width: 100vw;
+    height: 60vh;
+
+    background-image: linear-gradient(to top,
+        rgba($color-primary-dark, 1) 70%,
+        rgba($color-primary-dark, 0.8));
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+}

@@ -8,8 +8,16 @@
   justify-content: center;
   position: relative;
   padding: 0 15rem;
-  bottom: 12rem;
   width: 100vw;
+  height: 35rem;
+
+  @include respond(xl-desktop){
+    bottom: 8rem;
+}
+
+@include respond(tab-land){
+    bottom: 12rem;
+}
 
   &__card {
     display: flex;
@@ -33,11 +41,23 @@
     &-buttons {
       display: flex;
       justify-content: space-between;
-      width: 60%;
+      
 
       :last-child {
         margin-left: 1rem;
       }
+
+      @include respond(xl-desktop){
+        width: 50%;
+    }
+
+    @include respond(tab-port){
+        width: 80%;
+    }
+
+      @include respond(phone){
+        width: 80%;
+    }
     }
   }
 

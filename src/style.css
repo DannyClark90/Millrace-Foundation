@@ -32,42 +32,39 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
-:root {
+:root,
+html {
   font-size: 62.5%;
   box-sizing: border-box;
-  padding-bottom: 10rem;
-  display: flex;
-  position: relative;
-  font-size: 62.5%;
-  box-sizing: border-box;
-  padding-bottom: 10rem;
   font-family: "Lexend", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
 }
 @media (max-width: 120em) {
-  :root {
+  :root,
+  html {
     font-size: 56%;
   }
 }
 @media (max-width: 90em) {
-  :root {
+  :root,
+  html {
     font-size: 50%;
   }
 }
 @media (max-width: 80em) {
-  :root {
+  :root,
+  html {
     font-size: 45%;
   }
 }
 @media (max-width: 60em) {
-  :root {
+  :root,
+  html {
     font-size: 40%;
   }
 }
 @media (max-width: 37.5em) {
-  :root {
+  :root,
+  html {
     font-size: 30%;
   }
 }
@@ -132,6 +129,11 @@ body {
   margin-bottom: 2rem;
 }
 
+.home {
+  display: block;
+  height: auto;
+}
+
 /*
 0 - 600px:      Phone
 600 - 900px:    Tablet portrait
@@ -149,18 +151,91 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
+@keyframes rotate-center {
+  0% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
 .navbar {
   background-image: linear-gradient(to bottom, #6d8972 85%, rgba(109, 137, 114, 0.2));
   position: sticky;
   top: 0;
   width: 100vw;
   height: 12vh;
-  padding: 1rem 3rem;
   z-index: 10;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 80em) {
+  .navbar {
+    padding-bottom: 4.1rem;
+    padding-top: 3rem;
+  }
+}
+@media (max-width: 60em) {
+  .navbar {
+    padding-bottom: 5rem;
+    padding-top: 4.1rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .navbar {
+    padding-bottom: 7rem;
+    padding-top: 6.5rem;
+  }
 }
 .navbar__logo {
   height: 7rem;
@@ -170,6 +245,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 .navbar__title-and-logo {
   display: flex;
   align-items: center;
+  margin-left: 3rem;
 }
 
 .top-nav {
@@ -177,6 +253,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   justify-content: space-between;
   list-style: none;
   text-decoration: none;
+  margin-right: 3rem;
 }
 @media (max-width: 80em) {
   .top-nav {
@@ -185,10 +262,11 @@ ORDER: Base + typography > general layout + grid > page layout > components
 }
 .top-nav__item {
   padding: 3rem;
+  border-radius: 1rem;
 }
 .top-nav__link:link, .top-nav__link:visited {
   font-family: "Lexend", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 400;
   color: #fff;
   text-decoration: none;
@@ -201,17 +279,46 @@ ORDER: Base + typography > general layout + grid > page layout > components
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: fit-content;
-  background-color: #6D8972;
+  justify-content: space-around;
+  width: 100vw;
+  height: 94vh;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  background-image: linear-gradient(to bottom, #6d8972 95%, rgba(109, 137, 114, 0.2));
   list-style: none;
   text-decoration: none;
+  animation: fade 1s;
+}
+.mobile-nav__item {
+  padding: 3rem;
+  border-radius: 1rem;
+  animation: flip-horizontal-bottom 0.8s;
+}
+.mobile-nav__item:hover {
+  text-decoration: underline;
+  background-color: #88a18d;
+}
+.mobile-nav__link:link, .mobile-nav__link:visited {
+  font-family: "Lexend", sans-serif;
+  font-size: 3.4rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+.mobile-nav__link:hover {
+  text-decoration: underline;
 }
 
 .burger-menu {
   color: #fff;
   height: 6rem;
   width: 6rem;
+  border-radius: 1rem;
+  margin-right: 3rem;
+}
+.burger-menu:hover {
+  cursor: pointer;
+  background-color: #88a18d;
 }
 @media (max-width: 134em) {
   .burger-menu {
@@ -262,6 +369,22 @@ ORDER: Base + typography > general layout + grid > page layout > components
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
   }
 }
 /*
@@ -341,6 +464,106 @@ ORDER: Base + typography > general layout + grid > page layout > components
     transform: translateY(0);
   }
 }
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12rem 3rem 3rem 3rem;
+  width: 100vw;
+  height: 60vh;
+  background-image: linear-gradient(to top, #6d8972 70%, rgba(109, 137, 114, 0.8));
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+}
+
+@keyframes rotate-center {
+  0% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
 /*
 0 - 600px:      Phone
 600 - 900px:    Tablet portrait
@@ -364,8 +587,18 @@ ORDER: Base + typography > general layout + grid > page layout > components
   justify-content: center;
   position: relative;
   padding: 0 15rem;
-  bottom: 12rem;
   width: 100vw;
+  height: 35rem;
+}
+@media (max-width: 134em) {
+  .mission {
+    bottom: 8rem;
+  }
+}
+@media (max-width: 80em) {
+  .mission {
+    bottom: 12rem;
+  }
 }
 .mission__card {
   display: flex;
@@ -387,10 +620,24 @@ ORDER: Base + typography > general layout + grid > page layout > components
 .mission__card-buttons {
   display: flex;
   justify-content: space-between;
-  width: 60%;
 }
 .mission__card-buttons :last-child {
   margin-left: 1rem;
+}
+@media (max-width: 134em) {
+  .mission__card-buttons {
+    width: 50%;
+  }
+}
+@media (max-width: 60em) {
+  .mission__card-buttons {
+    width: 80%;
+  }
+}
+@media (max-width: 37.5em) {
+  .mission__card-buttons {
+    width: 80%;
+  }
 }
 .mission .logo {
   position: absolute;
@@ -440,6 +687,22 @@ ORDER: Base + typography > general layout + grid > page layout > components
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
   }
 }
 .button {

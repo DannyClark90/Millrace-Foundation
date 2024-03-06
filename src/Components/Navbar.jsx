@@ -14,7 +14,7 @@ export default function Navbar() {
       setNav("mobile-nav")
     }
     else{
-      setNav("navbar")
+      setNav("top-nav")
     }
   }
 
@@ -33,38 +33,38 @@ export default function Navbar() {
         <FaBars className="burger-menu" onClick={toggleNav}/>
         
         <ul className={nav}>
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               Home
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               About Us
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               What We Do
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               Support Us
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               News
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               Shop
             </Link>
           </li>

@@ -1,14 +1,9 @@
 @import "../Abstracts/mixins";
-:root{
+:root, 
+html {
     font-size: 62.5%; // 1rem = 10px
     box-sizing: border-box;
-    padding-bottom: 10rem;
-    display: flex;
-    position: relative;
-
-    font-size: 62.5%; // 1rem = 10px
-    box-sizing: border-box;
-    padding-bottom: 10rem;
+    font-family: "Lexend", sans-serif;
 
     @include respond(large-desktop){
         font-size: 56%;
@@ -29,11 +24,6 @@
     @include respond(phone){
         font-size: 30%;
     }
-
-    font-family: "Lexend", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
 }
 
 *,
