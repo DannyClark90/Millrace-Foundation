@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Sass/Layout/_navbar.scss";
 import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa6";
 
 export default function Navbar() {
+  const [nav, setNav] = useState("top-nav")
+  const [isToggled, setToggled] = useState("false")
+
+  const toggleNav = (event) => {
+    event.preventDefault()
+    setToggled(!isToggled)
+    if(isToggled){
+      setNav("mobile-nav")
+    }
+    else{
+      setNav("top-nav")
+    }
+  }
+
   return (
     <>
       <nav className="navbar">
@@ -14,40 +29,42 @@ export default function Navbar() {
           />
           <h1 className="navbar-heading">The Millrace Foundation</h1>
         </div>
-
-        <ul className="top-nav">
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+        
+        <FaBars className="burger-menu" onClick={toggleNav}/>
+        
+        <ul className={nav}>
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               Home
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               About Us
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               What We Do
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               Support Us
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               News
             </Link>
           </li>
 
-          <li className="top-nav__item top-nav__item--active">
-            <Link to="#" className="top-nav__link">
+          <li className={`${nav}__item`}>
+            <Link to="#" className={`${nav}__link`}>
               Shop
             </Link>
           </li>

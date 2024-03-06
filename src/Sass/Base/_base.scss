@@ -1,20 +1,35 @@
+@import "../Abstracts/mixins";
+:root, 
+html {
+    font-size: 62.5%; // 1rem = 10px
+    box-sizing: border-box;
+    font-family: "Lexend", sans-serif;
+
+    @include respond(large-desktop){
+        font-size: 56%;
+    }
+
+    @include respond(desktop){
+        font-size: 50%;
+    }
+    
+    @include respond(tab-land){
+        font-size: 45%;
+    }
+
+    @include respond(tab-port){
+        font-size: 40%;
+    }
+
+    @include respond(phone){
+        font-size: 30%;
+    }
+}
+
 *,
 *::before,
 *::after{
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-}
-
-html{
-    font-size: 62.5%;
-    box-sizing: border-box;
-    padding-bottom: 10rem;
-}
-
-body {
-    font-family: "Lexend", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
 }

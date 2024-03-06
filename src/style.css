@@ -1,22 +1,80 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+:root,
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+}
+@media (max-width: 120em) {
+  :root,
+  html {
+    font-size: 56%;
+  }
+}
+@media (max-width: 90em) {
+  :root,
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 80em) {
+  :root,
+  html {
+    font-size: 45%;
+  }
+}
+@media (max-width: 60em) {
+  :root,
+  html {
+    font-size: 40%;
+  }
+}
+@media (max-width: 37.5em) {
+  :root,
+  html {
+    font-size: 30%;
+  }
+}
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-  padding-bottom: 10rem;
-}
-
-body {
-  font-family: "Lexend", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
 }
 
 body {
@@ -31,12 +89,8 @@ body {
   color: #fff;
   text-transform: uppercase;
   height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: absolute;
-  top: 22rem;
-  right: 10rem;
+  text-align: center;
+  margin: 0 5rem;
 }
 .heading-primary--main {
   color: #fff;
@@ -48,13 +102,12 @@ body {
   animation-duration: 2s;
 }
 .heading-primary--sub {
-  position: absolute;
-  top: 8.5rem;
   color: #fff;
   display: block;
   font-size: 3.7rem;
   font-weight: 700;
   letter-spacing: 1.5rem;
+  margin-top: 2rem;
   animation-name: moveInRight;
   animation-duration: 2s;
 }
@@ -62,6 +115,7 @@ body {
 .navbar-heading {
   color: #fff;
   font-weight: 800;
+  font-size: 3.7rem;
 }
 
 .section-heading {
@@ -75,17 +129,113 @@ body {
   margin-bottom: 2rem;
 }
 
+.home {
+  display: block;
+  height: auto;
+}
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@keyframes rotate-center {
+  0% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
 .navbar {
   background-image: linear-gradient(to bottom, #6d8972 85%, rgba(109, 137, 114, 0.2));
   position: sticky;
   top: 0;
   width: 100vw;
   height: 12vh;
-  padding: 3rem;
   z-index: 10;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 80em) {
+  .navbar {
+    padding-bottom: 4.1rem;
+    padding-top: 3rem;
+  }
+}
+@media (max-width: 60em) {
+  .navbar {
+    padding-bottom: 5rem;
+    padding-top: 4.1rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .navbar {
+    padding-bottom: 7rem;
+    padding-top: 6.5rem;
+  }
 }
 .navbar__logo {
   height: 7rem;
@@ -95,6 +245,7 @@ body {
 .navbar__title-and-logo {
   display: flex;
   align-items: center;
+  margin-left: 3rem;
 }
 
 .top-nav {
@@ -102,20 +253,84 @@ body {
   justify-content: space-between;
   list-style: none;
   text-decoration: none;
+  margin-right: 3rem;
+}
+@media (max-width: 80em) {
+  .top-nav {
+    display: none;
+  }
 }
 .top-nav__item {
   padding: 3rem;
+  border-radius: 1rem;
 }
 .top-nav__link:link, .top-nav__link:visited {
   font-family: "Lexend", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 400;
   color: #fff;
+  text-decoration: none;
 }
 .top-nav__link:hover {
   text-decoration: underline;
 }
 
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 94vh;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  background-image: linear-gradient(to bottom, #6d8972 95%, rgba(109, 137, 114, 0.2));
+  list-style: none;
+  text-decoration: none;
+  animation: fade 1s;
+}
+.mobile-nav__item {
+  padding: 3rem;
+  border-radius: 1rem;
+  animation: flip-horizontal-bottom 0.8s;
+}
+.mobile-nav__item:hover {
+  text-decoration: underline;
+  background-color: #88a18d;
+}
+.mobile-nav__link:link, .mobile-nav__link:visited {
+  font-family: "Lexend", sans-serif;
+  font-size: 3.4rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+.mobile-nav__link:hover {
+  text-decoration: underline;
+}
+
+.burger-menu {
+  color: #fff;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 1rem;
+  margin-right: 3rem;
+}
+.burger-menu:hover {
+  cursor: pointer;
+  background-color: #88a18d;
+}
+@media (max-width: 134em) {
+  .burger-menu {
+    display: none;
+  }
+}
+@media (max-width: 80em) {
+  .burger-menu {
+    display: inline-block;
+  }
+}
+
 @keyframes rotate-center {
   0% {
     opacity: 0;
@@ -156,35 +371,57 @@ body {
     transform: translateY(0);
   }
 }
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 .header {
   display: flex;
-  width: 100vw;
-  height: 70vh;
-  margin-top: -1.7vh;
-  z-index: 1;
-}
-.header__bg-img {
-  display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  height: 100%;
   width: 100%;
+  height: 65vh;
+  margin-top: -1.7vh;
+  padding: 0, 30rem;
   background-image: linear-gradient(to bottom, rgba(109, 137, 114, 0.8), rgba(175, 200, 173, 0.7)), url("../../assets/Header-Background.png");
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
 }
-.header__logo {
-  position: absolute;
-  left: 9rem;
-  height: 41rem;
-  width: 41rem;
-  align-self: flex-end;
-  z-index: 2;
-  margin-bottom: -16rem;
-  animation-name: rotate-center, move-in-right;
-  animation-duration: 2s;
+@media (max-width: 90em) {
+  .header {
+    padding: 0 3rem;
+  }
 }
 
 @keyframes rotate-center {
@@ -227,26 +464,189 @@ body {
     transform: translateY(0);
   }
 }
-.mission-card {
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12rem 3rem 3rem 3rem;
+  width: 100vw;
+  height: 60vh;
+  background-image: linear-gradient(to top, #6d8972 70%, rgba(109, 137, 114, 0.8));
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+}
+
+@keyframes rotate-center {
+  0% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+.mission {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  padding: 0 15rem;
+  width: 100vw;
+  height: 35rem;
+}
+@media (max-width: 134em) {
+  .mission {
+    bottom: 8rem;
+  }
+}
+@media (max-width: 80em) {
+  .mission {
+    bottom: 12rem;
+  }
+}
+.mission__card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100rem;
+  flex-shrink: 0;
+  position: absolute;
+  left: 10%;
+  width: 80%;
   padding: 3rem 10rem;
+  margin: 0 3rem;
   background-color: #F2F1EB;
   font-size: 2.6rem;
-  position: absolute;
-  right: 20rem;
-  margin-top: -100px;
   clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
   animation-name: slide-up;
   animation-duration: 2s;
 }
-.mission-card__buttons {
+.mission__card-buttons {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+}
+.mission__card-buttons :last-child {
+  margin-left: 1rem;
+}
+@media (max-width: 134em) {
+  .mission__card-buttons {
+    width: 50%;
+  }
+}
+@media (max-width: 60em) {
+  .mission__card-buttons {
+    width: 80%;
+  }
+}
+@media (max-width: 37.5em) {
+  .mission__card-buttons {
+    width: 80%;
+  }
+}
+.mission .logo {
+  position: absolute;
+  margin-top: -10rem;
+  height: 20rem;
+  left: 11%;
+  animation-name: rotate-center, move-in-right;
+  animation-duration: 2s;
+  z-index: 4;
 }
 
 @keyframes rotate-center {
@@ -287,6 +687,22 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
   }
 }
 .button {
@@ -294,8 +710,9 @@ body {
   color: #fff;
   font-size: 2.6rem;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 20px;
   border-style: none;
+  cursor: pointer;
 }
 .button:link, .button:visited {
   text-decoration: none;

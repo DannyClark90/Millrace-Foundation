@@ -13,13 +13,9 @@ body {
     color: $color-white;
     text-transform: uppercase;
     height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: absolute;
-    top: 22rem;
-    right: 10rem;
-
+    text-align: center;
+    margin: 0 5rem;
+  
     &--main{     
         color: $color-white;
         display: block;
@@ -32,13 +28,12 @@ body {
     }
     
     &--sub{
-        position: absolute;
-        top: 8.5rem;
         color: $color-white;
         display: block;
         font-size: $heading-primary-sub;
         font-weight: 700;
         letter-spacing: 1.5rem;
+        margin-top: 2rem;
     
         animation-name: moveInRight;
         animation-duration: 2s;
@@ -48,6 +43,7 @@ body {
 .navbar-heading{
     color: $color-white;
     font-weight: 800;
+    font-size: $heading-primary-sub;
 }
 
 .section-heading{

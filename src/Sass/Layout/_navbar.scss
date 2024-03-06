@@ -1,49 +1,145 @@
-@import '../Abstracts/variables';
+@import "../Abstracts/variables";
+@import "../Abstracts/mixins";
+@import "../Base/animation";
 
-.navbar{
-    background-image: linear-gradient(to bottom, rgba($color-primary-dark, 1) 85%, rgba($color-primary-dark, 0.2) );
-    position: sticky;
-    top: 0;
-    width: 100vw;
-    height: 12vh;
-    padding: 3rem;
-    z-index: 10;
-    
+.navbar {
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-primary-dark, 1) 85%,
+    rgba($color-primary-dark, 0.2)
+  );
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 12vh;
+  z-index: 10;
+  
+  @include respond(tab-land){
+    padding-bottom: 4.1rem;
+    padding-top: 3rem;
+  }
+
+  @include respond(tab-port){
+    padding-bottom: 5rem;
+    padding-top: 4.1rem;
+  }
+
+  @include respond(phone){
+    padding-bottom: 7rem;
+    padding-top: 6.5rem;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    height: 7rem;
+    width: 7rem;
+    margin-right: 1rem;
+  }
+
+  &__title-and-logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    &__logo{
-        height: 7rem;
-        width: 7rem;
-        margin-right: 1rem;
-    }
-
-    &__title-and-logo{
-        display: flex;
-        align-items: center;
-    }
+    margin-left: 3rem;
+  }
 }
 
-.top-nav{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
+  margin-right: 3rem;
+  
+  @include respond(tab-land){
+    display: none;
+  }
+
+  &__item {
+    padding: 3rem;
+    border-radius: 1rem;
+  }
+
+  &__link:link,
+  &__link:visited {
+    font-family: "Lexend", sans-serif;
+    font-size: $default-font-size;
+    font-weight: 400;
+    color: $color-white;
     text-decoration: none;
+  }
 
-    &__item{
-        padding: 3rem;
-    }
+  &__link:hover {
+    text-decoration: underline;
+  }
+}
 
-    &__link:link,
-    &__link:visited {
-        font-family: "Lexend", sans-serif;
-        font-size: 2.5rem;
-        font-weight: 400;
-        color: $color-white;
-    }
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 94vh;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-primary-dark, 1) 95%,
+    rgba($color-primary-dark, 0.2)
+  );
+  list-style: none;
+  text-decoration: none;
 
-    &__link:hover{
-        text-decoration: underline;
+  animation: fade 1s;
+
+  &__item {
+    padding: 3rem;
+    border-radius: 1rem;
+
+    animation: flip-horizontal-bottom 0.8s;
+
+    &:hover {
+      text-decoration: underline;
+      background-color: lighten($color-primary-dark, 10%);
     }
+  }
+
+  &__link:link,
+  &__link:visited {
+    font-family: "Lexend", sans-serif;
+    font-size: $default-heading;
+    font-weight: 600;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+}
+
+.burger-menu{
+  color: $color-white;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 1rem;
+  margin-right: 3rem;
+
+  &:hover{
+    cursor: pointer;
+    background-color: lighten($color-primary-dark, 10%);
+  }
+  
+  @include respond(xl-desktop){
+    display: none;
+  }
+  
+  @include respond(tab-land){
+    display: inline-block;
+  }
 }
