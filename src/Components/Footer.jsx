@@ -5,10 +5,23 @@ import "../Sass/Base/_utilities.scss";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import Button from "./Button";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function footer() {
+  const animationVariants = {
+    initial: { y: 100, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+    transition: { duration: 2 },
+  };
+
   return (
-    <footer className="footer">
+    <motion.footer 
+    className="footer"
+    variants={animationVariants}
+    initial="initial"
+    whileInView="animate"
+    transition={{duration: 1}}
+    >
       <div className="footer__section--support-us">
         <h2 className="footer-heading margin-bottom">Support Us</h2>
         <Button label='Make a Donation' color='white'/>
@@ -29,6 +42,6 @@ export default function footer() {
           <FaLinkedinIn className="icon"/>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
