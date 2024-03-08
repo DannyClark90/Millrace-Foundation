@@ -53,7 +53,7 @@
   list-style: none;
   text-decoration: none;
   margin-right: 3rem;
-  
+
   @include respond(tab-land){
     display: none;
   }
@@ -70,6 +70,10 @@
     font-weight: 400;
     color: $color-white;
     text-decoration: none;
+
+    @include respond(large-desktop){
+      font-size: 2.3rem;
+    }
   }
 
   &__link:hover {
@@ -141,5 +145,6 @@
   
   @include respond(tab-land){
     display: inline-block;
+    margin-right: 8rem;
   }
 }

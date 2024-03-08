@@ -1,0 +1,17 @@
+@import '../Abstracts/variables';
+
+.issues{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: fit-content;
+    padding: 8rem 20rem;
+    justify-content: flex-start;
+}
+
+.issues-img {
+width: 40%;
+border-radius: 3rem;
+box-shadow: 0 .1rem 2rem rgba($color-black,1);
+margin-top: 3rem;
+}

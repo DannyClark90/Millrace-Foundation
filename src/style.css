@@ -98,29 +98,25 @@ body {
   font-size: 6rem;
   font-weight: 800;
   letter-spacing: 1rem;
-  animation-name: moveInLeft;
-  animation-duration: 2s;
 }
 .heading-primary--sub {
   color: #fff;
   display: block;
-  font-size: 3.7rem;
+  font-size: 4rem;
   font-weight: 700;
   letter-spacing: 1.5rem;
   margin-top: 2rem;
-  animation-name: moveInRight;
-  animation-duration: 2s;
 }
 
 .navbar-heading {
   color: #fff;
   font-weight: 800;
-  font-size: 3.7rem;
+  font-size: 4rem;
 }
 
 .section-heading {
   color: #4F6F52;
-  font-size: 3.4rem;
+  font-size: 4rem;
   font-weight: 800;
   font-style: normal;
 }
@@ -128,11 +124,15 @@ body {
 .footer-heading {
   color: #fff;
   font-weight: 800;
-  font-size: 3.7rem;
+  font-size: 4rem;
 }
 
 .margin-bottom {
   margin-bottom: 2rem;
+}
+
+.margin-top {
+  margin-top: 2rem;
 }
 
 .home {
@@ -214,7 +214,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   }
 }
 .navbar {
-  background-image: linear-gradient(to bottom, #6d8972 85%, rgba(109, 137, 114, 0.2));
+  background-image: linear-gradient(to bottom, #75a579 85%, rgba(117, 165, 121, 0.2));
   position: sticky;
   top: 0;
   width: 100vw;
@@ -277,6 +277,11 @@ ORDER: Base + typography > general layout + grid > page layout > components
   color: #fff;
   text-decoration: none;
 }
+@media (max-width: 120em) {
+  .top-nav__link:link, .top-nav__link:visited {
+    font-size: 2.3rem;
+  }
+}
 .top-nav__link:hover {
   text-decoration: underline;
 }
@@ -290,7 +295,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   height: 94vh;
   padding-top: 5rem;
   padding-bottom: 8rem;
-  background-image: linear-gradient(to bottom, #6d8972 95%, rgba(109, 137, 114, 0.2));
+  background-image: linear-gradient(to bottom, #75a579 95%, rgba(117, 165, 121, 0.2));
   list-style: none;
   text-decoration: none;
   animation: fade 1s;
@@ -302,7 +307,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 }
 .mobile-nav__item:hover {
   text-decoration: underline;
-  background-color: #88a18d;
+  background-color: #94b997;
 }
 .mobile-nav__link:link, .mobile-nav__link:visited {
   font-family: "Lexend", sans-serif;
@@ -324,7 +329,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 }
 .burger-menu:hover {
   cursor: pointer;
-  background-color: #88a18d;
+  background-color: #94b997;
 }
 @media (max-width: 134em) {
   .burger-menu {
@@ -334,6 +339,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 @media (max-width: 80em) {
   .burger-menu {
     display: inline-block;
+    margin-right: 8rem;
   }
 }
 
@@ -419,7 +425,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   height: 65vh;
   margin-top: -1.7vh;
   padding: 0, 30rem;
-  background-image: linear-gradient(to bottom, rgba(109, 137, 114, 0.8), rgba(175, 200, 173, 0.7)), url("../../assets/Header-Background.png");
+  background-image: linear-gradient(to bottom, rgba(117, 165, 121, 0.8), rgba(175, 200, 173, 0.7)), url("../../assets/Header-Background.png");
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
@@ -493,7 +499,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   padding: 18rem 3rem 3rem 3rem;
   width: 100vw;
   height: 60vh;
-  background-image: linear-gradient(to top, #6d8972 70%, rgba(109, 137, 114, 0.8));
+  background-image: linear-gradient(to top, #75a579 70%, rgba(117, 165, 121, 0.8));
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
 }
 .footer__section {
@@ -669,8 +675,6 @@ ORDER: Base + typography > general layout + grid > page layout > components
   background-color: #F2F1EB;
   font-size: 2.6rem;
   clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
-  animation-name: slide-up;
-  animation-duration: 2s;
 }
 .mission__card-buttons {
   display: flex;
@@ -699,9 +703,23 @@ ORDER: Base + typography > general layout + grid > page layout > components
   margin-top: -10rem;
   height: 20rem;
   left: 11%;
-  animation-name: rotate-center, move-in-right;
-  animation-duration: 2s;
   z-index: 4;
+}
+
+.issues {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: fit-content;
+  padding: 8rem 20rem;
+  justify-content: flex-start;
+}
+
+.issues-img {
+  width: 40%;
+  border-radius: 3rem;
+  box-shadow: 0 0.1rem 2rem black;
+  margin-top: 3rem;
 }
 
 @keyframes rotate-center {
@@ -761,7 +779,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   }
 }
 .button-green {
-  background-color: #6D8972;
+  background-color: #75a579;
   color: #fff;
   font-size: 2.6rem;
   font-weight: 600;
@@ -792,12 +810,12 @@ ORDER: Base + typography > general layout + grid > page layout > components
 }
 .button-green--white {
   background-color: #fff;
-  color: #6D8972;
+  color: #75a579;
 }
 
 .button-white {
   background-color: #fff;
-  color: #6D8972;
+  color: #75a579;
   font-size: 2.6rem;
   font-weight: 600;
   padding: 2rem;

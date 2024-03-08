@@ -40,9 +40,6 @@
 
     clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
 
-    animation-name: slide-up;
-    animation-duration: 2s;
-
     &-buttons {
       display: flex;
       justify-content: space-between;
@@ -71,9 +68,6 @@
     margin-top: -10rem;
     height: 20rem;
     left: 11%;
-
-    animation-name: rotate-center, move-in-right;
-    animation-duration: 2s;
     z-index: 4;
   }
 }
