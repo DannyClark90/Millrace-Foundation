@@ -11,7 +11,7 @@
   position: sticky;
   top: 0;
   width: 100vw;
-  height: 12vh;
+  height: fit-content;
   z-index: 10;
   
   @include respond(tab-land){
