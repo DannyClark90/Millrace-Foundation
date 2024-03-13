@@ -1,0 +1,47 @@
+@import "../Abstracts/variables";
+@import "../Abstracts/mixins";
+
+.create-change {
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 10rem;
+  position: relative;
+
+  &__image-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50vw;
+    position: sticky;
+    top: 10rem;
+
+    &__images{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+    }
+  }
+
+  &__article {
+    padding: 5rem;
+    height: fit-content;
+    width: 40%;
+    border-radius: 3rem;
+    text-align: left;
+    font-size: $default-font-size;
+    box-shadow: 1rem 1rem 2rem rgba($color-black, 0.2);
+    background-color: $color-beige-light;
+  }
+}
+
+.chair {
+    height: 40vh;
+    margin-top: 3rem;
+    margin-right: 3rem;
+    border-radius: 3rem;
+    box-shadow: 1rem 1rem 2rem rgba($color-black, 0.2);
+}

@@ -21,6 +21,7 @@ export default function footer() {
     initial="initial"
     whileInView="animate"
     transition={{duration: 1}}
+    viewport={{ once: true }}
     >
       <div className="footer__section--support-us">
         <h2 className="footer-heading margin-bottom">Support Us</h2>

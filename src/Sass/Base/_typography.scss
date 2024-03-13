@@ -1,55 +1,68 @@
-@import '../Abstracts/variables';
+@import "../Abstracts/variables";
 
 body {
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    font-size: 1.8rem;
-    line-height: 1.7;
-    color: $color-heading;
-    
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: $color-heading;
 }
 
-.heading-primary{
-    color: $color-white;
-    text-transform: uppercase;
-    height: fit-content;
-    text-align: center;
-    margin: 0 5rem;
-  
-    &--main{     
-        color: $color-white;
-        display: block;
-        font-size: $heading-primary-main;
-        font-weight: 800;
-        letter-spacing: 1rem;
-    }
-    
-    &--sub{
-        color: $color-white;
-        display: block;
-        font-size: $heading-primary-sub;
-        font-weight: 700;
-        letter-spacing: 1.5rem;
-        margin-top: 2rem;
-    }
-}
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  height: fit-content;
+  text-align: center;
+  margin: 0 5rem;
 
-.navbar-heading{
+  &--main {
     color: $color-white;
+    display: block;
+    font-size: $heading-primary-main;
     font-weight: 800;
+    letter-spacing: 1rem;
+  }
+
+  &--sub {
+    color: $color-white;
+    display: block;
     font-size: $heading-primary-sub;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    margin-top: 2rem;
+  }
 }
 
-.section-heading{
+.navbar-heading {
+  color: $color-white;
+  font-weight: 800;
+  font-size: $heading-primary-sub;
+}
+
+.section-heading {
+  color: $color-heading;
+  font-size: $heading-primary-sub;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+
+  &--sub {
     color: $color-heading;
-    font-size: $heading-primary-sub;
+    font-size: $section-heading-sub;
     font-weight: 800;
     font-style: normal;
     text-align: center;
-}
+  }
 
-.footer-heading{
+  &--sub-white {
     color: $color-white;
     font-weight: 800;
     font-size: $heading-primary-sub;
+  }
+}
+
+.footer-heading {
+  color: $color-white;
+  font-weight: 800;
+  font-size: $heading-primary-sub;
 }

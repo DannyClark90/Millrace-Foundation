@@ -42,7 +42,7 @@ export default function Issues() {
           viewport={{ once: true }}
         >
           <p>
-            4 to 10% of people of Essex will experience mental illness in their
+            4 to 10% of people in Essex will experience mental illness in their
             lifetime.
           </p>
         </motion.div>

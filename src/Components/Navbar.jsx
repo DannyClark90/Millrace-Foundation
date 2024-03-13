@@ -34,7 +34,7 @@ export default function Navbar() {
         
         <ul className={nav}>
           <li className={`${nav}__item`}>
-            <Link to="#" className={`${nav}__link`}>
+            <Link to="/" className={`${nav}__link`}>
               Home
             </Link>
           </li>
@@ -47,13 +47,13 @@ export default function Navbar() {
 
           <li className={`${nav}__item`}>
             <Link to="#" className={`${nav}__link`}>
-              What We Do
+              Support Us
             </Link>
           </li>
 
           <li className={`${nav}__item`}>
-            <Link to="#" className={`${nav}__link`}>
-              Support Us
+            <Link to="/contact-us" className={`${nav}__link`}>
+              Contact Us
             </Link>
           </li>
 

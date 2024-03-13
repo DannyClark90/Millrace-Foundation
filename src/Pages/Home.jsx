@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import Mission from "../Components/Mission";
 import Issues from "../Components/Issues";
 import "../Sass/Pages/_home.scss";
+import CreateChange from "../Components/CreateChange";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <main className="home">
         <Mission/>
         <Issues/>
+        <CreateChange/>
       </main>
     </>
   );
