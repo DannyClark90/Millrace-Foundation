@@ -1,11 +1,11 @@
 @import "../Abstracts/variables";
 @import "../Abstracts/mixins";
 
-.create-change {
+.local-benefits {
   width: 100vw;
   height: fit-content;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 3rem 10rem;
   position: relative;
@@ -14,44 +14,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 0;
 }
 
   &__image-container{
-    justify-self: flex-start;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
-    width: 42vw;
+    height: 90vh;
+    width: fit-content;
     position: sticky;
     top: 10rem;
-    
+
+    @include respond (tab-land){
+      top: 20rem;
+    }
+
     @include respond (tab-port){
-     justify-self: flex-start;
-     justify-content: center;
-     width: 90vw;
-     height: fit-content;
-     position: relative;
-     top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      top: 0;
+      height: fit-content;
+      width: 90vw;
   }
-
-    &--images{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-
-     @include respond (tab-land){
-      margin-top: 4rem;
-    }
-
-    @include respond (tab-port){
-      margin-top: 0;
-    }
-    }
   }
 
   &__article {
-    justify-self: flex-end;
     padding: 5rem;
     height: fit-content;
     width: 55%;
@@ -62,39 +52,38 @@
     background-color: $color-beige-light;
 
     @include respond (tab-port){
-      width: 86vw;
-      margin-top: 2rem;
-   }
+     width: 86vw;
+      margin-top: 3rem;
+    }
+  }
+
+  &_images{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
   }
 }
 
-.chair {
+.img {
     height: 40vh;
     margin-top: 3rem;
     margin-right: 3rem;
     border-radius: 3rem;
     box-shadow: 1rem 1rem 2rem rgba($color-black, 0.2);
 
-    @include respond (large-desktop){
-      height: 35vh;
-    }
-
-    @include respond (desktop){
-      height: 30vh;
-    }
-
     @include respond (tab-land){
-      height: 30vh;
-      margin-top: 4rem;
+      height: 21vh;
+      margin-top: 7rem;
     }
 
     @include respond (tab-port){
-      height: 30vh;
+      height: 24.5vh;
       margin-top: 2rem;
+      margin-right: 1rem;
     }
 
     @include respond (phone){
-      height: 27vh;
+      height: 22.8vh;
       margin-top: 2rem;
       margin-right: 1rem;
     }

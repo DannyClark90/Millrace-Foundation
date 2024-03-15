@@ -2,6 +2,7 @@ import React from "react";
 
 export default function Contact() {
   return (
+    <>
     <section className="contact">
       <form action="" className="contact__form">
         <h2 className="contact__form__heading section-heading--sub-white">
@@ -49,5 +50,6 @@ export default function Contact() {
         </div>
       </form>
     </section>
+    </>
   );
 }

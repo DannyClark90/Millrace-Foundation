@@ -1,4 +1,5 @@
 @import "../Abstracts/variables";
+@import "../Abstracts/mixins";
 
 body {
   font-family: "Lexend", sans-serif;
@@ -37,6 +38,10 @@ body {
   color: $color-white;
   font-weight: 800;
   font-size: $heading-primary-sub;
+  
+  @include respond (phone){
+    font-size: 4rem;
+  }
 }
 
 .section-heading {

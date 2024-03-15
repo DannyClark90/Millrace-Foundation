@@ -1,0 +1,35 @@
+@import "../Abstracts/variables";
+@import "../Abstracts/mixins";
+@import "../Base/animation";
+
+.reviews {
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 3rem 10rem;
+  position: relative;
+}
+
+.carousel-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 30vw;
+    font-size: $default-heading;
+    text-align: center;
+    animation-name: fade;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.carousel{
+    width: 86%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15rem;
+}

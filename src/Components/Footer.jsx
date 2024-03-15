@@ -32,6 +32,7 @@ export default function footer() {
         <h2 className="footer-heading">Contact</h2>
         <p className="margin-bottom">Moulsham Mill Centre, Parkway, Chelmsford CM2 7PX</p>
         <p className="margin-bottom">Tel: 01245 801424</p>
+        <p className="margin-bottom">E-mail: millracefoundation@gmail.com</p>
         <p>Please use our contact form to get in touch</p>
       </div>
 
@@ -43,6 +44,8 @@ export default function footer() {
           <FaLinkedinIn className="icon"/>
         </div>
       </div>
+
+      <p className="footer__legal">© 2024 The Millrace Foundation. We're a registered UK charity, CIO No. 1200465.</p>
     </motion.footer>
   );
 }
