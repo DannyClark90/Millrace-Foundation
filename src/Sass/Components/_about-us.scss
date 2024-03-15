@@ -1,0 +1,57 @@
+@import "../Abstracts/variables";
+@import "../Base/animation";
+@import "../Abstracts/mixins";
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  padding: 0 15rem;
+  width: 100vw;
+  height: 180vh;
+
+  @include respond(xl-desktop){
+    bottom: 8rem;
+}
+
+@include respond(tab-land){
+    bottom: 12rem;
+}
+
+@include respond(phone){
+  bottom: 12rem;
+  height:49rem;
+}
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    padding: 20rem;
+    padding-top: 7rem;
+    margin: -10rem 3rem 3rem 0rem;
+    background-color: $color-beige-light;
+    font-size: $default-font-size;
+
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+
+    &--first-paragraph{
+      align-self: flex-end;
+      width: 90%;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    margin-top:-25rem ;
+    height: 30rem;
+    left: 11%;
+    z-index: 11;
+  }
+}

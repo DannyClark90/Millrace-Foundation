@@ -10,7 +10,7 @@ import Reviews from "../Components/Reviews";
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header PrimaryHeading={'Welcome to The millrace foundation'} SubHeading={'Action On Mental Health'}/>
       <main className="home">
         <Mission/>
         <Issues/>

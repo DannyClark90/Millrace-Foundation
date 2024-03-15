@@ -40,7 +40,7 @@ export default function Navbar() {
           </li>
 
           <li className={`${nav}__item`}>
-            <Link to="#" className={`${nav}__link`}>
+            <Link to="/about-us" className={`${nav}__link`}>
               About Us
             </Link>
           </li>

@@ -42,20 +42,20 @@ export default function Reviews() {
           </CarouselItem>
           <CarouselItem>
             <p>
-              “I feel more in control of my Life and less dependent on others
+              “I feel more in control of my Life, less dependent on others
               and more capable of managing my situation independently”
             </p>
             <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
           </CarouselItem>
           <CarouselItem>
             <p>
-              “Provided me with opportunity to get a qualification that no one
+              “Millrace provided me with an opportunity to get a qualification that no one
               else was providing”
             </p>
             <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
           </CarouselItem>
           <CarouselItem>
-            <p>“Increased my confidence and I now can control my anxiety”</p>
+            <p>“Millrace increased my confidence and I now can control my anxiety”</p>
             <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
           </CarouselItem>
           <CarouselItem>

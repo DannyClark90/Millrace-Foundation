@@ -31,11 +31,11 @@ export default function Mission() {
             beneficiary.
           </p>
           <div className="mission__card-buttons">
-            <Link to="#">
+            <Link to="/about-us">
               <Button label={"About Us"} color={"green"} />
             </Link>
             <Link to="#">
-              <Button label={"What We Do"} color={"green"} />
+              <Button label={"Get Involved"} color={"green"} />
             </Link>
           </div>
         </motion.article>

@@ -1252,6 +1252,132 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  padding: 0 15rem;
+  width: 100vw;
+  height: 180vh;
+}
+@media (max-width: 134em) {
+  .about {
+    bottom: 8rem;
+  }
+}
+@media (max-width: 80em) {
+  .about {
+    bottom: 12rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .about {
+    bottom: 12rem;
+    height: 49rem;
+  }
+}
+.about__article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  padding: 20rem;
+  padding-top: 7rem;
+  margin: -10rem 3rem 3rem 0rem;
+  background-color: #F2F1EB;
+  font-size: 2.6rem;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+.about__article--first-paragraph {
+  align-self: flex-end;
+  width: 90%;
+}
+.about__logo {
+  position: absolute;
+  margin-top: -25rem;
+  height: 30rem;
+  left: 11%;
+  z-index: 11;
+}
+
+@keyframes rotate-center {
+  0% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 .contact {
   display: flex;
   flex-direction: column;
@@ -1265,24 +1391,40 @@ ORDER: Base + typography > general layout + grid > page layout > components
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  justify-self: flex-start;
+  align-self: flex-start;
+  position: absolute;
+  margin-top: -2rem;
   flex-shrink: 0;
   width: fit-content;
   padding: 3rem 10rem;
   background-color: #F2F1EB;
   font-size: 2.6rem;
   clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
-  grid-row: 2 4;
+  z-index: 1;
 }
 .contact__form {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: linear-gradient(to bottom right, #75a579, rgba(175, 200, 173, 0.8));
   height: 80vh;
   width: 90vw;
   padding: 10rem;
   clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
 }
-.contact__form__heading {
-  grid-column: span 3;
+.contact__form__inputs {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  padding: 2rem;
+  align-self: flex-end;
+}
+.contact__form__inputs--message {
+  height: 6rem;
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem;
 }
 .contact__form__input {
   height: 6rem;
@@ -1292,12 +1434,11 @@ ORDER: Base + typography > general layout + grid > page layout > components
   padding: 3rem;
 }
 .contact__form__input--message {
-  height: 6rem;
-  width: 100%;
   font-size: 2.6rem;
   border-radius: 1rem;
   padding: 3rem;
-  grid-column: span 2;
+  height: 100%;
+  width: 97%;
 }
 
 /*# sourceMappingURL=style.css.map */
